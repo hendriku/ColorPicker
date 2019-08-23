@@ -14,7 +14,7 @@ import SwiftUI
 public struct ColorPicker : View {
     
     public var color: Binding<Color>
-    public var strokeWidth: Length = 30
+    public var strokeWidth: CGFloat = 30
     
     public var body: some View {
         GeometryReader { geometry -> ColorWheel in
@@ -23,7 +23,7 @@ public struct ColorPicker : View {
         .aspectRatio(1, contentMode: .fit)
     }
     
-    public init(color: Binding<Color>, strokeWidth: Length) {
+    public init(color: Binding<Color>, strokeWidth: CGFloat) {
         self.color = color
         self.strokeWidth = strokeWidth
     }
@@ -36,7 +36,7 @@ public struct ColorWheel: View {
     public var color: Binding<Color>
     @State private var position: CGPoint = CGPoint.zero
     @State private var angle: Angle = .degrees(-45)
-    public var strokeWidth: Length
+    public var strokeWidth: CGFloat
     
     public var body: some View {
         let conic = AngularGradient(gradient: Gradient.colorWheelSpectrum, center: .center, angle: .degrees(-90))
@@ -47,7 +47,7 @@ public struct ColorWheel: View {
                 .gesture(DragGesture(minimumDistance: 0, coordinateSpace: .local).onChanged(self.update(value:))
             )
             Circle()
-                .fill(color.value)
+                .fill(color.wrappedValue)
                 .frame(width: strokeWidth, height: strokeWidth, alignment: .center)
                 .fixedSize()
                 .offset(indicatorOffset)
@@ -61,7 +61,7 @@ public struct ColorWheel: View {
         }
     }
     
-    public init(frame: CGRect, color: Binding<Color>, strokeWidth: Length) {
+    public init(frame: CGRect, color: Binding<Color>, strokeWidth: CGFloat) {
         self.frame = frame
         self.color = color
         self.strokeWidth = strokeWidth
@@ -70,7 +70,7 @@ public struct ColorWheel: View {
     internal func update(value: DragGesture.Value) {
         self.position = value.location
         self.angle = Angle(radians: radCenterPoint(value.location, frame: self.frame))
-        self.color.value = Color.fromAngle(angle: self.angle)
+        self.color.wrappedValue = Color.fromAngle(angle: self.angle)
     }
     
     internal func radCenterPoint(_ point: CGPoint, frame: CGRect) -> Double {
