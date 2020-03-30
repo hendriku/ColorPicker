@@ -34,4 +34,4 @@ The color wheel will take all the space it can get unless you frame it to a cust
 
 You can use this software under the terms and conditions of the MIT License.
 
-Hendrik Ulbrich © 2019
+Hendrik Ulbrich © 2020
