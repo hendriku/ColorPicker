@@ -14,7 +14,7 @@ import SwiftUI
 import ColorPicker
 
 struct ContentView: View {
-    @State var color = Angle(radians: 0).color
+    @State var color = UIColor.red
     
     var body: some View {
         ColorPicker(color: $color, strokeWidth: 30)
