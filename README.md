@@ -7,7 +7,7 @@ A color picker implementation with color wheel appearance written in plain Swift
 Add this repository as a Swift Package Dependency to your project. You find the option in Xcode unter "File > Swift Packages > Add Package Dependency...". Paste the HTTPS reference to this repo and you're done!
 
 After importing the module: Simply use the `ColorPicker` structure which is a regular SwiftUI `View`.
-This project uses the [Dynamic Color](https://github.com/yannickl/DynamicColor) dependency which lets you write plattform independant color classes. No matter if iOS or macOS. Internally it uses `UIColor` and `NSColor`.
+This project uses the [DynamicColor](https://github.com/yannickl/DynamicColor) dependency which lets you write plattform independant color classes. No matter if iOS or macOS. Internally it uses `UIColor` and `NSColor`.
 
 ```
 import SwiftUI
