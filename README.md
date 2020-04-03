@@ -1,6 +1,6 @@
 # ColorPicker
 
-A color picker implementation with color wheel appearance written in plain SwiftUI.
+A color picker implementation with color wheel appearance written in plain SwiftUI. It is compatible with UIColor and NSColor.
 
 ## Usage
 
