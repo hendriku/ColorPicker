@@ -21,12 +21,6 @@ struct ContentView: View {
             .frame(width: 300, height: 300, alignment: .center)
     }
 }
-
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
-    }
-}
 ```
 
 The color wheel will take all the space it can get unless you frame it to a custom size. You are also able to specify the `strokeWidth` of the color wheel over the given property.
