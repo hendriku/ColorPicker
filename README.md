@@ -7,28 +7,33 @@ A color picker implementation with color wheel appearance written in plain Swift
 Add this repository as a Swift Package Dependency to your project. You find the option in Xcode unter "File > Swift Packages > Add Package Dependency...". Paste the HTTPS reference to this repo and you're done!
 
 After importing the module: Simply use the `ColorPicker` structure which is a regular SwiftUI `View`.
+This project uses the [Dynamic Color](https://github.com/yannickl/DynamicColor) dependency which lets you write plattform independant color classes. No matter if iOS or macOS. Internally it uses `UIColor` and `NSColor`.
 
 ```
 import SwiftUI
 import ColorPicker
 
-struct ContentView : View {
-
-    @State var color: Color = .red
-
+struct ContentView: View {
+    @State var color = Angle(radians: 0).color
+    
     var body: some View {
-        VStack {
-            Text("Source of truth: \(String(describing: color))")
-            ColorPicker(color: $color, strokeWidth: 10)
-                .frame(width: 100, height: 100, alignment: .center)
-        }
+        ColorPicker(color: $color, strokeWidth: 30)
+            .frame(width: 300, height: 300, alignment: .center)
     }
-
 }
 
+struct ContentView_Previews: PreviewProvider {
+    static var previews: some View {
+        ContentView()
+    }
+}
 ```
 
 The color wheel will take all the space it can get unless you frame it to a custom size. You are also able to specify the `strokeWidth` of the color wheel over the given property.
+
+## Usage with SwiftUI Color
+
+As the native SwiftUI `Color` is implemented as a view rather than a model data structure it won't be used as data structure in the future. This is conforming with the indices provided by Apple: They implemented a @frozen property for their `Color` class which could be interpreted that they won't provide any further interfaces for data extraction to their `Color` view class. 
 
 ## License
 

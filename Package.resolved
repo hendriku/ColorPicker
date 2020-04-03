@@ -1,0 +1,16 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "DynamicColor",
+        "repositoryURL": "https://github.com/yannickl/DynamicColor.git",
+        "state": {
+          "branch": null,
+          "revision": "1e85f9461f44bbf8c3ffba9101b8d202f864cdc6",
+          "version": "5.0.0"
+        }
+      }
+    ]
+  },
+  "version": 1
+}

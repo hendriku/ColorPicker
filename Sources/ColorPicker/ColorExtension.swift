@@ -6,31 +6,48 @@
 //
 
 import SwiftUI
+import DynamicColor
 
-extension Color {
-
-    static func fromAngle(angle: Angle) -> Color {
-        return Color(hue: angle.radians / (2 * .pi), saturation: 1, brightness: 1)
+extension Angle {
+    var color: DynamicColor {
+        DynamicColor(hue: CGFloat(self.radians / (2 * .pi)), saturation: 1, brightness: 1, alpha: 1)
     }
     
-    static func fromAngle(rad: Double) -> Color {
-        Color.fromAngle(angle: Angle(radians: rad))
+    var colorView: Color {
+        Color(hue: self.radians / (2 * .pi), saturation: 1, brightness: 1)
     }
+}
 
+extension DynamicColor {
+    var angle: Angle {
+        Angle(radians: Double(2 * .pi * self.hueComponent))
+    }
+}
+
+extension AngularGradient {
+    static let conic = AngularGradient(gradient: Gradient.colorWheelSpectrum, center: .center, angle: .degrees(-90))
 }
 
 extension Gradient {
-    
     static let colorWheelSpectrum: Gradient = Gradient(colors: [
-        Color.fromAngle(rad: .pi / 2),
-        Color.fromAngle(rad: .pi / 4),
-        Color.fromAngle(rad: 2 * .pi),
-        Color.fromAngle(rad: 7/4 * .pi),
-        Color.fromAngle(rad: 3/2 * .pi),
-        Color.fromAngle(rad: 5/4 * .pi),
-        Color.fromAngle(rad: .pi),
-        Color.fromAngle(rad: 3/4 * .pi),
-        Color.fromAngle(rad: .pi / 2),
+        Angle(radians: 3/6 * .pi).colorView,
+        
+        Angle(radians: 2/6 * .pi).colorView,
+        Angle(radians: 1/6 * .pi).colorView,
+        Angle(radians: 12/6 * .pi).colorView,
+        
+        Angle(radians: 11/6 * .pi).colorView,
+        
+        Angle(radians: 10/6 * .pi).colorView,
+        Angle(radians: 9/6 * .pi).colorView,
+        Angle(radians: 8/6 * .pi).colorView,
+        
+        Angle(radians: 7/6 * .pi).colorView,
+        
+        Angle(radians: 6/6 * .pi).colorView,
+        Angle(radians: 5/6 * .pi).colorView,
+        Angle(radians: 4/6 * .pi).colorView,
+        
+        Angle(radians: 3/6 * .pi).colorView,
     ])
-    
 }
