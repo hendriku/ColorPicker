@@ -2,6 +2,8 @@
 
 A color picker implementation with color wheel appearance written in plain SwiftUI. It is compatible with UIColor and NSColor.
 
+![ColorPickerDemo-2](https://user-images.githubusercontent.com/8998518/78367183-f6531780-75c1-11ea-8829-f288241c0d49.gif)
+
 ## Usage
 
 Add this repository as a Swift Package Dependency to your project. You find the option in Xcode unter "File > Swift Packages > Add Package Dependency...". Paste the HTTPS reference to this repo and you're done!
