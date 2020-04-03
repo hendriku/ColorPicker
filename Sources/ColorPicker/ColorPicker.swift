@@ -22,6 +22,11 @@ public struct ColorPicker : View {
         }
         .aspectRatio(1, contentMode: .fit)
     }
+    
+    public init(color: Binding<DynamicColor>, strokeWidth: CGFloat) {
+       self.color = color
+       self.strokeWidth = strokeWidth
+    }
 }
 
 public struct ColorWheel: View {
