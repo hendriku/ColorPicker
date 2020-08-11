@@ -1,6 +1,6 @@
 //
-//  ColorPicker.swift
-//  ColorPicker
+//  ColorPickerRing.swift
+//  ColorPickerRing
 //
 //  Created by Hendrik Ulbrich on 15.07.19.
 //
@@ -12,7 +12,7 @@
 import SwiftUI
 import DynamicColor
 
-public struct ColorPicker : View {
+public struct ColorPickerRing : View {
     public var color: Binding<DynamicColor>
     public var strokeWidth: CGFloat = 30
     
