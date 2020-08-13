@@ -1,6 +1,6 @@
 //
 //  ColorExtension.swift
-//  ColorPicker
+//  ColorPickerRing
 //
 //  Created by Hendrik Ulbrich on 16.07.19.
 //

@@ -1,4 +1,4 @@
-# ColorPicker
+# ColorPickerRing
 
 A color picker implementation with color wheel appearance written in plain SwiftUI. It is compatible with UIColor and NSColor.
 
@@ -8,18 +8,18 @@ A color picker implementation with color wheel appearance written in plain Swift
 
 Add this repository as a Swift Package Dependency to your project. You find the option in Xcode unter "File > Swift Packages > Add Package Dependency...". Paste the HTTPS reference to this repo and you're done!
 
-After importing the module: Simply use the `ColorPicker` structure which is a regular SwiftUI `View`.
+After importing the module: Simply use the `ColorPickerRing` structure which is a regular SwiftUI `View`.
 This project uses the [DynamicColor](https://github.com/yannickl/DynamicColor) dependency which lets you write plattform independant color classes. No matter if iOS or macOS. Internally it uses `UIColor` and `NSColor`.
 
 ```
 import SwiftUI
-import ColorPicker
+import ColorPickerRing
 
 struct ContentView: View {
     @State var color = UIColor.red
     
     var body: some View {
-        ColorPicker(color: $color, strokeWidth: 30)
+        ColorPickerRing(color: $color, strokeWidth: 30)
             .frame(width: 300, height: 300, alignment: .center)
     }
 }
